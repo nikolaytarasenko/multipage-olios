@@ -1,0 +1,27 @@
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #d8d8d8;
+$color-gray-light: #e7e7e7;
+$color-gray-middle: #c1c1c1;
+$color-blue: #0023ff;
+$color-blue-light: #435aad;
+
+// Sizes
+$base-font-size: 16px;
+
+$breakpoints: (
+  "phone"       : 400px,
+  "phone-wide"  : 480px,
+  "phablet"     : 560px,
+  "tablet-small": 640px,
+  "tablet"      : 768px,
+  "tablet-wide" : 1024px,
+  "desktop"     : 1248px,
+  "desktop-wide": 1440px
+);
+
+$content-size: 1170px;
+
+// Fonts
+$base-font-family: 'Lato', Arial, sans-serif;
