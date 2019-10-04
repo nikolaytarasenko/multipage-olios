@@ -1,0 +1,299 @@
+.product {
+  display: flex;
+  min-height: 100vh;
+
+  &__left,
+  &__right {
+    position: relative;
+  }
+
+  &__left {
+    flex: 4;
+    margin-left: 80px;
+    padding: 100px 60px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.17);
+    z-index: 3;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: relative;
+    max-height: 550px;
+  }
+
+  &__icon {
+    width: 26px;
+    max-height: 26px;
+  }
+
+  &__right {
+    position: relative;
+    flex: 6;
+    background: $color-gray-light;
+    padding: 100px 60px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 720px;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 1;
+    transform: translateY(-8px);
+  }
+
+  &__category {
+    color: $color-gray-middle;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    max-width: 720px;
+    margin-top: 6rem;
+  }
+
+  &__heading {
+    font-size: 7vh;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__blue-text {
+    color: $color-blue;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-gray-middle;
+    margin-top: 3rem;
+  }
+}
+
+.likes {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    .likes__count {
+      color: $color-blue;
+    }
+
+    .likes__image {
+      fill: $color-blue;
+    }
+  }
+
+  &__count {
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: 0.1s ease;
+  }
+
+  &__image {
+    fill: $color-pink;
+    transition: 0.1s ease;
+  }
+}
+
+.zoom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  &__plus,
+  &__minus {
+    fill: $color-blue;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      fill: $color-pink;
+    }
+  }
+
+  &__plus {
+    margin-right: 0.75rem;
+  }
+}
+
+.meta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  &__pin,
+  &__search {
+    fill: $color-gray;
+    transition: 0.2s ease;
+
+    &:hover {
+      fill: $color-blue;
+    }
+  }
+
+  &__pin {
+    margin-right: 2rem;
+  }
+
+  &__search {
+    cursor: pointer;
+  }
+}
+
+.order {
+  display: flex;
+  max-width: 720px;
+  margin-top: 3rem;
+
+  &__item {
+    &--cost {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &--quantity {
+      flex: 1;
+    }
+
+    &--add {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+  }
+  
+  &__title {
+    text-transform: uppercase;
+    color: $color-gray-middle;
+    font-weight: 900;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    font-size: 3rem;
+    color: $color-blue;
+    font-weight: 700;
+
+    &--old {
+      display: inline-block;
+      margin-left: 1rem;
+      color: $color-black;
+      font-size: 1.5rem;
+      text-decoration: line-through;
+    }
+  }
+
+  &__quantity {
+    position: relative;
+    font-size: 2rem;
+    color: $color-black;
+    font-weight: 700;
+    background: $color-white;
+  }
+}
+
+.quantity {
+  display: block;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 28px;
+  padding: 8px 0;
+
+  &__plus,
+  &__minus {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    appearance: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    right: 15px;
+  }
+
+  &__plus {
+    border-bottom: 5px solid $color-blue;
+    top: 9px;
+  }
+
+  &__minus {
+    border-top: 5px solid $color-blue;
+    bottom: 9px;
+  }
+}
+
+.recommended {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 20px 80px 20px 170px;
+  background: $color-white;
+
+  &__title {
+    position: absolute;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    color: $color-gray;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: top;
+    top: 50%;
+    left: -40px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  &__item {
+    text-align: center;
+  }
+
+  &__image {
+    max-height: 200px;
+  }
+  
+  &__name {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $color-black;
+  }
+
+  &__description {
+    color: $color-gray;
+    font-size: 0.875rem;
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,54 @@
+section.product
+    .product__left
+        .product__image
+            img.product__img(src="static/images/content/product/product-big.jpg")
+            .product__likes.likes
+                .likes__count 495
+                svg(class="likes__image product__icon")
+                    use(xlink:href="static/images/svg/symbol/sprite.svg#heart")
+            .product__zoom.zoom
+                svg(class="zoom__plus product__icon")
+                    use(xlink:href="static/images/svg/symbol/sprite.svg#plus")
+                svg(class="zoom__minus product__icon")
+                    use(xlink:href="static/images/svg/symbol/sprite.svg#minus")
+            .product__meta.meta
+                svg(class="meta__pin product__icon")
+                    use(xlink:href="static/images/svg/symbol/sprite.svg#pin")
+                svg(class="meta__search product__icon")
+                    use(xlink:href="static/images/svg/symbol/sprite.svg#search")
+    .product__right
+        .product__header
+            h1.product__name products
+            .product__category living room
+        .product__info
+            h3.product__heading
+                span.product__blue-text white seat&nbsp;
+                | - office
+            p.product__description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum interdum malesuada. Sed ornare posuere lobortis.
+            .product__order.order
+                .order__item.order__item--cost
+                    .order__title cost
+                    .order__price $65
+                        span.order__price.order__price--old $90
+                .order__item.order__item--quantity
+                    .order__title quantity
+                    .order__quantity.quantity 1
+                        button.quantity__plus
+                        button.quantity__minus
+                .order__item.order__item--add
+                    a.button.order__button(href="#") add to cart
+        .product__recommended.recommended
+            .recommended__title recommended
+            .recommended__list
+                .recommended__item
+                    img.recommended__image(src="static/images/content/categories/product-5.jpg")
+                    h3.recommended__name dark seat
+                    .recommended__description Lorem ipsum dolor sit amet
+                .recommended__item
+                        img.recommended__image(src="static/images/content/categories/product-3.jpg")
+                        h3.recommended__name blue seat
+                        .recommended__description Lorem ipsum dolor sit amet
+                .recommended__item
+                        img.recommended__image(src="static/images/content/categories/product-1.jpg")
+                        h3.recommended__name red seat
+                        .recommended__description Lorem ipsum dolor sit amet
