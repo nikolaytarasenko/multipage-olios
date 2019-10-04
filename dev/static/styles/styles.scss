@@ -55,3 +55,9 @@ button { outline: none; }
 
 // Modules
 @import "modules/modules";
+
+// for js
+.js-show {
+  opacity: 1;
+  visibility: visible;
+}

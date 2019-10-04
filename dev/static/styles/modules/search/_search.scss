@@ -1,0 +1,99 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.99);
+  transition: 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: scale(0);
+
+  &__close {
+    position: absolute;
+    right: 50%;
+    top: 4rem;
+    appearance: none;
+    transform: translateX(-50%);
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: $color-black;
+    transition: 0.1s ease;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__form {
+    max-width: 1200px;
+    padding: 2rem;
+  }
+
+  &__control {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    background: transparent;
+    margin-bottom: 2rem;
+    padding: 0 3rem 2rem 0;
+    border: 0;
+    border-bottom: 2px solid $color-gray;
+    font-size: 8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+
+    &::placeholder {
+      font-size: 8rem;
+      font-weight: 200;
+      color: $color-gray-light;
+    }
+  }
+
+  &__label {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: $color-gray;
+  }
+
+  &__clear {
+    position: absolute;
+    right: 0;
+    top: 0;
+    appearance: none;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: $color-gray;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.1s ease;
+  }
+
+  &__result {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: $color-black;
+    transition: 0.1s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+}

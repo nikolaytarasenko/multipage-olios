@@ -1,4 +1,5 @@
 (function() {
+    // menu
     const hamburgerButton = document.querySelector('.hamburger__button');
 
     hamburgerButton.addEventListener('click', function(e) {
@@ -31,19 +32,59 @@
     const zoomIn = document.querySelector('.zoom__plus');
     const zoomOut = document.querySelector('.zoom__minus');
 
-    productBigImage.style.transform = zoomSizes[Math.floor(zoomSizes.length / 2)];
+    if (productBigImage && zoomIn && zoomOut) {
+        productBigImage.style.transform = zoomSizes[Math.floor(zoomSizes.length / 2)];
 
-    zoomIn.addEventListener('click', function(e) {
-        const currentZoom = productBigImage.style.transform;
-        const currentZoomIndex = zoomSizes.indexOf(currentZoom);
+        zoomIn.addEventListener('click', function(e) {
+            const currentZoom = productBigImage.style.transform;
+            const currentZoomIndex = zoomSizes.indexOf(currentZoom);
 
-        return (zoomSizes[currentZoomIndex + 1]) ? productBigImage.style.transform = zoomSizes[currentZoomIndex + 1] : false;
+            return (zoomSizes[currentZoomIndex + 1]) ? productBigImage.style.transform = zoomSizes[currentZoomIndex + 1] : false;
+        });
+
+        zoomOut.addEventListener('click', function(e) {
+            const currentZoom = productBigImage.style.transform;
+            const currentZoomIndex = zoomSizes.indexOf(currentZoom);
+
+            return (zoomSizes[currentZoomIndex - 1]) ? productBigImage.style.transform = zoomSizes[currentZoomIndex - 1] : false;
+        });
+    }
+
+    // search
+    const search = document.querySelector('.search');
+    const searchInput = document.querySelector('.search__input');
+    const searchClear = document.querySelector('.search__clear');
+    const searchResult = document.querySelector('.search__result');
+    const searchClose = document.querySelector('.search__close');
+
+    searchInput.addEventListener('input', function(e) {
+        if (this.value !== '') {
+            searchClear.classList.add('js-show');
+            searchResult.classList.add('js-show');
+        } else {
+            searchClear.classList.remove('js-show');
+            searchResult.classList.remove('js-show');
+        }
     });
 
-    zoomOut.addEventListener('click', function(e) {
-        const currentZoom = productBigImage.style.transform;
-        const currentZoomIndex = zoomSizes.indexOf(currentZoom);
+    searchClear.addEventListener('click', e => {
+        e.preventDefault();
 
-        return (zoomSizes[currentZoomIndex - 1]) ? productBigImage.style.transform = zoomSizes[currentZoomIndex - 1] : false;
+        searchInput.value = '';
+        searchClear.classList.remove('js-show');
+        searchResult.classList.remove('js-show');
+    });
+
+    // search events
+    const searchButton = document.querySelectorAll('.search__button');
+
+    for (let i = 0; i < searchButton.length; i++) {
+        searchButton[i].addEventListener('click', e => {
+            search.style.transform = 'scale(1)';
+        });
+    }
+
+    searchClose.addEventListener('click', e => {
+        search.style.transform = 'scale(0)';
     });
 })();
