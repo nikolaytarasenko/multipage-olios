@@ -15,4 +15,8 @@
   &:hover {
     background: darken($color-blue, 8%);
   }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }

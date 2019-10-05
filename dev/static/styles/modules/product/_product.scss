@@ -2,6 +2,11 @@
   display: flex;
   min-height: 100vh;
 
+  @media (max-width: 1366px) {
+    flex-direction: column;
+    min-height: auto;
+  }
+
   &__left,
   &__right {
     position: relative;
@@ -13,6 +18,15 @@
     padding: 100px 60px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.17);
     z-index: 3;
+
+    @media (max-width: 1366px) {
+      padding: 60px;
+    }
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      padding: 0;
+    }
   }
 
   &__image {
@@ -22,23 +36,38 @@
     position: relative;
     height: 100%;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
   }
 
   &__img {
     position: relative;
     max-height: 550px;
+
+    @media (max-width: 768px) {
+      max-height: 220px;
+    }
   }
 
   &__icon {
     width: 26px;
     max-height: 26px;
+
+    @media (max-width: 768px) {
+      width: 18px;
+      max-height: 18px;
+    }
   }
 
   &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     flex: 6;
     background: $color-gray-light;
-    padding: 100px 60px;
   }
 
   &__header {
@@ -46,6 +75,17 @@
     justify-content: space-between;
     align-items: center;
     max-width: 720px;
+    padding: 50px 50px 0 50px;
+
+    @media (max-width: 1366px) {
+      margin: 0 auto 15px;
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px;
+      flex-direction: column;
+    }
   }
 
   &__name {
@@ -54,6 +94,11 @@
     font-size: 3rem;
     line-height: 1;
     transform: translateY(-8px);
+
+    @media (max-width: 1366px) {
+      transform: translateY(0);
+      margin-bottom: 5px;
+    }
   }
 
   &__category {
@@ -64,8 +109,18 @@
   }
 
   &__info {
-    max-width: 720px;
-    margin-top: 6rem;
+    max-width: 820px;
+    padding-left: 50px;
+
+    @media (max-width: 1366px) {
+      margin: 0 auto 50px;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
   }
 
   &__heading {
@@ -83,6 +138,11 @@
     font-weight: 400;
     color: $color-gray-middle;
     margin-top: 3rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+      margin-top: 2rem;
+    }
   }
 }
 
@@ -93,6 +153,17 @@
   right: 0;
   line-height: 1;
   cursor: pointer;
+
+  @media (max-width: 1366px) {
+    top: 12px;
+    right: 80px;
+  }
+
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+    align-items: center;
+  }
 
   &:hover {
     .likes__count {
@@ -109,11 +180,19 @@
     font-size: 1.5rem;
     line-height: 1;
     transition: 0.1s ease;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 
   &__image {
     fill: $color-pink;
     transition: 0.1s ease;
+
+    @media (max-width: 768px) {
+      margin-top: 1px;
+    }
   }
 }
 
@@ -121,6 +200,11 @@
   position: absolute;
   left: 0;
   bottom: 0;
+
+  @media (max-width: 768px) {
+    left: 10px;
+    bottom: 10px;
+  }
 
   &__plus,
   &__minus {
@@ -142,6 +226,11 @@
   position: absolute;
   right: 0;
   bottom: 0;
+
+  @media (max-width: 768px) {
+    right: 10px;
+    bottom: 10px;
+  }
 
   &__pin,
   &__search {
@@ -167,13 +256,30 @@
   max-width: 720px;
   margin-top: 3rem;
 
+  @media (max-width: 1366px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
   &__item {
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
+
     &--cost {
-      flex: 4;
+      flex: 3;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+
+      @media (max-width: 768px) {
+        align-items: center;
+      }
     }
 
     &--quantity {
@@ -201,6 +307,11 @@
     color: $color-blue;
     font-weight: 700;
 
+    @media (max-width: 768px) {
+      margin: auto;
+      font-size: 2.5rem;
+    }
+
     &--old {
       display: inline-block;
       margin-left: 1rem;
@@ -225,6 +336,11 @@
   text-align: center;
   margin-top: 28px;
   padding: 8px 0;
+
+  @media (max-width: 768px) {
+    max-width: 206px;
+    margin: 0 auto;
+  }
 
   &__plus,
   &__minus {
@@ -252,28 +368,39 @@
 
 .recommended {
   display: flex;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  padding: 20px 80px 20px 170px;
+  position: relative;
   background: $color-white;
+  padding: 20px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   &__title {
     position: absolute;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     color: $color-gray;
     transform: rotate(-90deg) translateY(-50%);
     transform-origin: top;
     top: 50%;
-    left: -40px;
+    left: -21px;
+
+    @media (max-width: 768px) {
+      left: -45px;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
     flex: 1;
+    padding: 0 50px 0 150px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 0;
+    }
   }
   
   &__item {
@@ -281,7 +408,7 @@
   }
 
   &__image {
-    max-height: 200px;
+    max-height: 120px;
   }
   
   &__name {

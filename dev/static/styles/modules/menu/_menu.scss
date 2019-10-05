@@ -68,6 +68,10 @@
     height: 100%;
     padding: 0 4.5rem;
     flex: 1;
+
+    @media (max-width: 768px) {
+      padding: 60px 0 0;
+    }
   }
 
   &__item {
@@ -98,11 +102,24 @@
     opacity: 0;
     transition: 0.1s linear;
     transition-delay: 2.5s;
+
+    @media (max-width: 768px) {
+      max-width: 29px;
+      max-height: 29px;
+    }
   }
 
   &__footer {
     padding-bottom: 100px;
     margin-top: 2rem;
+
+    @media (max-width: 768px) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    z-index: 13;
   }
 }
 
